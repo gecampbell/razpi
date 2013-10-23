@@ -5,7 +5,7 @@
 # This is useful if you connect to a network and don't know the
 # IP address of your Pi.
 
-TMPFILE=/tmp/$HOSTNAME-$0.TMP
+TMPFILE=/tmp/$HOSTNAME-$(basename $0).TMP
 
 if [ "$1" == "" ]; then
 	echo Error: no destination specified
@@ -15,9 +15,12 @@ if [ "$1" == "" ]; then
 fi
 
 # store the configuration data here
-date > $TMPFILE
-echo --- >> $TMPFILE
+hostname > $TMPFILE
+date >> $TMPFILE
+echo ===== >> $TMPFILE
 ifconfig -a >> $TMPFILE
+echo ===== >> $TMPFILE
+df -h >> $TMPFILE
 
 # copy it to the remote location
 scp $TMPFILE $1

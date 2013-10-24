@@ -6,6 +6,9 @@
 
 # load data
 FILENAME=/tmp/IMG_`date +%Y%m%d%H%M%S`.jpg
+QUALITY=70
+WIDTH=640
+HEIGHT=480
 . ~/.flickrrc # define credentials
 
 echo `date` Starting $0
@@ -13,9 +16,9 @@ echo `date` Starting $0
 # take the picture
 echo `date` taking the picture
 raspistill \
-	-q 70 \
-	-w 1024 \
-	-h 768 \
+	-q $QUALITY \
+	-w $WIDTH \
+	-h $HEIGHT \
 	-o $FILENAME
 
 # upload

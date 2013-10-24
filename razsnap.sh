@@ -6,7 +6,6 @@
 
 # take the picture
 FILENAME=/tmp/IMG_`date +%Y%m%d%H%M%S`.jpg
-echo file is $FILENAME
 raspistill -q 80 -o $FILENAME
 
 # upload

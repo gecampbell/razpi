@@ -27,7 +27,8 @@ flickr_upload \
 	--auth_token $FLICKR_TOKEN \
 	--key $FLICKR_KEY \
 	--secret $FLICKR_SECRET \
-	--family 1 \
+	--family 0 \
+	--public 0 \
 	--tag='RazSnap' \
 	$FILENAME
 

@@ -7,6 +7,7 @@
 # load data
 FILENAME=/tmp/IMG_`date +%Y%m%d%H%M%S`.jpg
 QUALITY=70
+# max width=2492 height=1944
 WIDTH=640
 HEIGHT=480
 . ~/.flickrrc # define credentials
